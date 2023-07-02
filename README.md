@@ -3,6 +3,11 @@ Various training, inference and validation code and results related to Open LLM'
 
 ## Training
 
+The following Google Colab Notebook was used to finetune an [openlm-research/open_llama_7b](https://huggingface.co/openlm-research/open_llama_7b) LLM model on the translated Alpaca instruct dataset.
+
+Notebook: [Open_Llama_7B_Alpaca_Clean_Dutch_Qlora](Open_Llama_7B_Alpaca_Clean_Dutch_Qlora.ipynb)
+
+
 << TODO >>
 
 ## Evaluation
