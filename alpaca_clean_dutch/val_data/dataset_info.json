@@ -1,0 +1,49 @@
+{
+  "builder_name": "json",
+  "citation": "",
+  "config_name": "BramVanroy--alpaca-cleaned-dutch",
+  "dataset_size": 22014685,
+  "description": "",
+  "download_checksums": {
+    "https://huggingface.co/datasets/BramVanroy/alpaca-cleaned-dutch/resolve/79e4cc109558b26e8f30f44adb768b8f9709dfba/alpaca_data_cleaned-dutch.jsonl": {
+      "num_bytes": 24355992,
+      "checksum": null
+    }
+  },
+  "download_size": 24355992,
+  "features": {
+    "id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "instruction": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "input": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "output": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 46370677,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 22014685,
+      "num_examples": 51712,
+      "dataset_name": "json"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
