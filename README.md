@@ -3,10 +3,21 @@ Various training, inference and validation code and results related to Open LLM'
 
 ## Training
 
-The following Google Colab Notebook was used to finetune an [openlm-research/open_llama_7b](https://huggingface.co/openlm-research/open_llama_7b) LLM model on the translated Alpaca instruct dataset.
+I've used Google Colaboratory to finetune the 2 largest LLM base models from openlm_research on the Alpaca Cleaned instruction dataset that was translated to Dutch.
 
-Notebook: [Open_Llama_7B_Alpaca_Clean_Dutch_Qlora](Open_Llama_7B_Alpaca_Clean_Dutch_Qlora.ipynb)
+In some early experiments I started with the open_llama_3b model. It turned out however that the results from the 7B and 13B models were a lot better.
 
+Below you can find the Google Colab Training notebooks. The link to the basemodel and the link to the finetuned model at Huggingface.co.
+
+he following Google Colab Notebook was used to finetune an  LLM model on the translated Alpaca instruct dataset.
+
+Basemodel [openlm-research/open_llama_7b](https://huggingface.co/openlm-research/open_llama_7b):
+* Training Notebook [Open_Llama_7B_Alpaca_Clean_Dutch_Qlora](Open_Llama_7B_Alpaca_Clean_Dutch_Qlora.ipynb)
+* Huggingface Model [open_llama_7b_alpaca_clean_dutch](https://www.huggingface.co/robinsmits/open_llama_7b_alpaca_clean_dutch_qlora)
+
+Basemodel [openlm-research/open_llama_13b](https://huggingface.co/openlm-research/open_llama_13b):
+* Training Notebook [Open_Llama_13B_Alpaca_Clean_Dutch_Qlora](Open_Llama_13B_Alpaca_Clean_Dutch_Qlora.ipynb)
+* Huggingface Model [open_llama_13b_alpaca_clean_dutch](https://www.huggingface.co/robinsmits/open_llama_13b_alpaca_clean_dutch_qlora)
 
 << TODO >>
 
