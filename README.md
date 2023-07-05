@@ -1,30 +1,38 @@
 # Dutch LLM's
 Various training, inference and validation code and results related to Open LLM's that were pretrained (full or partially) on the Dutch language.
 
-## Training
+## Training and Evaluation
 
 I've used Google Colaboratory to finetune the 2 largest LLM base models from openlm_research on the Alpaca Cleaned instruction dataset that was translated to Dutch.
 
 In some early experiments I started with the open_llama_3b model. It turned out however that the results from the 7B and 13B models were a lot better.
 
-Below you can find the Google Colab Training notebooks. The link to the basemodel and the link to the finetuned model at Huggingface.co.
+Below you can find the Google Colab Training and Inference notebooks. The link to the basemodel and the link to the finetuned model at Huggingface.co.
 
-he following Google Colab Notebook was used to finetune an  LLM model on the translated Alpaca instruct dataset.
+Each Inference notebooks contains 50 samples with a generated Answer for an Instruction/Input prompt from the validation dataset.
 
 Basemodel [openlm-research/open_llama_7b](https://huggingface.co/openlm-research/open_llama_7b):
 * Training Notebook [Open_Llama_7B_Alpaca_Clean_Dutch_Qlora](Open_Llama_7B_Alpaca_Clean_Dutch_Qlora.ipynb)
+* Inference Notebook [Open_Llama_7B_Alpaca_Clean_Dutch_Inference](Open_Llama_7B_Alpaca_Clean_Dutch_Inference.ipynb)
 * Huggingface Model [open_llama_7b_alpaca_clean_dutch](https://www.huggingface.co/robinsmits/open_llama_7b_alpaca_clean_dutch_qlora)
 
 Basemodel [openlm-research/open_llama_13b](https://huggingface.co/openlm-research/open_llama_13b):
 * Training Notebook [Open_Llama_13B_Alpaca_Clean_Dutch_Qlora](Open_Llama_13B_Alpaca_Clean_Dutch_Qlora.ipynb)
+* Inference Notebook [Open_Llama_13B_Alpaca_Clean_Dutch_Inference](Open_Llama_13B_Alpaca_Clean_Dutch_Inference.ipynb)
 * Huggingface Model [open_llama_13b_alpaca_clean_dutch](https://www.huggingface.co/robinsmits/open_llama_13b_alpaca_clean_dutch_qlora)
 
-<< TODO >>
+In the near future I would like to do a more indepth analysis of the generated answers for the various prompts.
 
-## Evaluation
+For now a quick summary of my first impression on the results that I have gathered with the finetuned open_llmama models sofar:
+* Both the 7B and 13B models suffer occassionally from repetitions and hallucinations.
+* Occassionally no answer is generated. Or there is plain garbage output...specifically the 13B model suffers from this .. (the ///// sequences)
+* A small but significant percentage of generated answers make some sense in the Dutch language.
 
-<< TODO >>
+It is very clear that these models should not be used in any reallife or production scenario related to the Dutch language. The percentage of Dutch text within the training set was just to small for a serious usage.
 
+That said, with all the issues mentioned above, it is still interresting to observe that a significant percentage of the generated answers make some sense in the Dutch language.
+
+I'am looking forward to the first open LLM model that is trained on a dataset with a larger percentage of the data based on the Dutch language.
 
 ## Datasets
 
