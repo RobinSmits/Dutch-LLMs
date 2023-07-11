@@ -27,8 +27,14 @@ For now a quick summary of my first impression on the results that I have gather
 * Both the 7B and 13B models suffer occassionally from repetitions and hallucinations.
 * Occassionally no answer is generated. Or there is plain garbage output...specifically the 13B model suffers from this .. (the ///// sequences)
 * A small but significant percentage of generated answers make some sense in the Dutch language.
+* Some average/good examples for the 7B model are: 0, 2, 3, 5, 7, 8, 10, 12, 13, 19, 20, 23
+* Some average/good examples for the 13B model are: 0, 2, 5, 8, 9, 13, 21, 22
 
-It is very clear that these models should not be used in any reallife or production scenario related to the Dutch language. The percentage of Dutch text within the training set was just to small for a serious usage.
+The above mentioned average and good examples have a reasonably good quality. This list is by no means complete. There can be some typos, repetitions etc ... in the context of the small portion of the original training set that is applicable to the Dutch language it is my personal opinion that these are acceptible. With more and diverse Dutch training dataset I would expect a higher quality.
+
+!! TODO: Implement one of the mainstream multi-lingual evaluation scenario's
+
+It is very clear that these models should not be used in any reallife or production scenario related to the Dutch language. These finetuned models are primarily intended for research purposes. The percentage of Dutch language text in the training set is to small to achieve a performance comparable to the main (English) language in the training set.
 
 That said, with all the issues mentioned above, it is still interresting to observe that a significant percentage of the generated answers make some sense in the Dutch language.
 
