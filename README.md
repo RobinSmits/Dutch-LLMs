@@ -1,7 +1,13 @@
 # Dutch LLM's
 Various training, inference and validation code and results related to Open LLM's that were pretrained (full or partially) on the Dutch language.
 
+At this moment (July 26th, 2023) this repository contains the Google Colaboratory notebooks for finetuning and inference of the following Open LLM's:
+* Open LLaMA 7B and 13B
+* PolyLM 1.7B and 13B
+
 ## Training and Evaluation
+
+### OpenLLaMA
 
 I've used Google Colaboratory to finetune the 2 largest LLM base models from openlm_research on the Alpaca Cleaned instruction dataset that was translated to Dutch.
 
@@ -38,7 +44,29 @@ It is very clear that these models should not be used in any reallife or product
 
 That said, with all the issues mentioned above, it is still interresting to observe that a significant percentage of the generated answers make some sense in the Dutch language.
 
-I'am looking forward to the first open LLM model that is trained on a dataset with a larger percentage of the data based on the Dutch language.
+### PolyLM
+
+Recently some researchers from Alibaba released the Open LLM PolyLM models with 1.7B and 13B parameters. There motivation was to create an Open LLM model that supports multiple languages besides the regularly used English language. PolyLM was trained on 18 languages and Dutch was one of those languages.
+
+According to the research paper PolyLM surpasses models like LLaMA and Bloom on multilingual tasks while scoring comparable on English.
+
+More information about the model can be found in the [research paper](https://arxiv.org/abs/2307.06018).
+
+I've used Google Colaboratory to finetune the 2 Open LLM PolyLM base models on the Alpaca Cleaned instruction dataset that was translated to Dutch.
+
+Below you can find the Google Colab Training and Inference notebooks, the link to the basemodel and the link to the finetuned model at Huggingface.co.
+
+Each Inference notebooks contains 50 samples with a generated Answer for an Instruction/Input prompt from the validation dataset.
+
+Basemodel [DAMO-NLP-MT/polylm-1.7b](https://huggingface.co/DAMO-NLP-MT/polylm-1.7b):
+* Training Notebook [PolyLM_1.7B_Alpaca_Clean_Dutch_Qlora](PolyLM_1_7B_Alpaca_Clean_Dutch_Qlora.ipynb)
+* Inference Notebook [PolyLM_1.7B_Alpaca_Clean_Dutch_Inference](PolyLM_1_7B_Alpaca_Clean_Dutch_Inference.ipynb)
+* Huggingface Model [polylm_1.7b_ft_alpaca_clean_dutch](https://huggingface.co/robinsmits/polylm_1.7b_ft_alpaca_clean_dutch)
+
+Basemodel [DAMO-NLP-MT/polylm-13b](https://huggingface.co/DAMO-NLP-MT/polylm-13b):
+* Training Notebook [PolyLM_13B_Alpaca_Clean_Dutch_Qlora](PolyLM_13B_Alpaca_Clean_Dutch_Qlora.ipynb)
+* Inference Notebook [PolyLM_13B_Alpaca_Clean_Dutch_Inference](PolyLM_13B_Alpaca_Clean_Dutch_Inference.ipynb)
+* Huggingface Model [polylm_13b_ft_alpaca_clean_dutch](https://huggingface.co/robinsmits/polylm_13b_ft_alpaca_clean_dutch)
 
 ## Datasets
 
@@ -53,7 +81,7 @@ Recently I came across a version of the dataset that was completely translated i
 During training of the first Colab Notebook the dataset was split into a training and validation part. The size of the validation set is 2048 rows.
 Since I would like to be able to compare the various training runs and evaluation results the training and validation datasets are stored within a subfolder (alpaca_clean_dutch) in this Github repo.
 
-## References
+## Citations
 
 ```
 @misc{https://doi.org/10.57967/hf/0530,
@@ -63,5 +91,26 @@ Since I would like to be able to compare the various training runs and evaluatio
   title = {{A}lpaca {C}leaned {D}utch},
   publisher = {Hugging Face},
   year = {2023}
+}
+```
+
+```
+@misc{wei2023polylm,
+      title={PolyLM: An Open Source Polyglot Large Language Model}, 
+      author={Xiangpeng Wei and Haoran Wei and Huan Lin and Tianhao Li and Pei Zhang and Xingzhang Ren and Mei Li and Yu Wan and Zhiwei Cao and Binbin Xie and Tianxiang Hu and Shangjie Li and Binyuan Hui and Bowen Yu and Dayiheng Liu and Baosong Yang and Fei Huang and Jun Xie},
+      year={2023},
+      eprint={2307.06018},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
+
+```
+@software{openlm2023openllama,
+  author = {Geng, Xinyang and Liu, Hao},
+  title = {OpenLLaMA: An Open Reproduction of LLaMA},
+  month = May,
+  year = 2023,
+  url = {https://github.com/openlm-research/open_llama}
 }
 ```
