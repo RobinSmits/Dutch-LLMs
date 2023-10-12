@@ -1,7 +1,7 @@
 # Dutch LLM's
 Various training, inference and validation code and results related to Open LLM's that were pretrained (full or partially) on the Dutch language.
 
-At this moment (July 26th, 2023) this repository contains the Google Colaboratory notebooks for finetuning and inference of the following Open LLM's:
+At this moment (October 12th, 2023) this repository contains the Google Colaboratory notebooks for finetuning and inference of the following Open LLM's:
 * Open LLaMA 7B and 13B
 * PolyLM 1.7B and 13B
 
@@ -63,10 +63,16 @@ Basemodel [DAMO-NLP-MT/polylm-1.7b](https://huggingface.co/DAMO-NLP-MT/polylm-1.
 * Inference Notebook [PolyLM_1.7B_Alpaca_Clean_Dutch_Inference](PolyLM_1_7B_Alpaca_Clean_Dutch_Inference.ipynb)
 * Huggingface Model [polylm_1.7b_ft_alpaca_clean_dutch](https://huggingface.co/robinsmits/polylm_1.7b_ft_alpaca_clean_dutch)
 
-Basemodel [DAMO-NLP-MT/polylm-13b](https://huggingface.co/DAMO-NLP-MT/polylm-13b):
+Basemodel [DAMO-NLP-MT/polylm-13b-fine-grained-shards](https://huggingface.co/DAMO-NLP-MT/polylm-13b-fine-grained-shards):
 * Training Notebook [PolyLM_13B_Alpaca_Clean_Dutch_Qlora](PolyLM_13B_Alpaca_Clean_Dutch_Qlora.ipynb)
 * Inference Notebook [PolyLM_13B_Alpaca_Clean_Dutch_Inference](PolyLM_13B_Alpaca_Clean_Dutch_Inference.ipynb)
 * Huggingface Model [polylm_13b_ft_alpaca_clean_dutch](https://huggingface.co/robinsmits/polylm_13b_ft_alpaca_clean_dutch)
+
+For now a quick summary of my first impression on the results that I have gathered with the finetuned PolyLM models so far:
+* Both the 1.7B and 13B models suffer occassionally from repetitions and hallucinations.
+* A small but significant percentage of generated answers make some sense in the Dutch language.
+* The 13B model is giving better quality answers than the 1.7B model.
+* It is also worth noting that the quality of both the PolyLM models is far better than the Open LLama models. Based on the larger size of the Dutch language in the pretraining dataset for the PolyLM models this is as expected.
 
 ## Datasets
 
