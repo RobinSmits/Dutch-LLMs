@@ -1,11 +1,36 @@
 # Dutch LLM's
 Various training, inference and validation code and results related to Open LLM's that were pretrained (full or partially) on the Dutch language.
 
-At this moment (October 12th, 2023) this repository contains the Google Colaboratory notebooks for finetuning and inference of the following Open LLM's:
+At this moment (March 29th, 2024) this repository contains the Google Colaboratory notebooks for finetuning and inference of the following Open LLM's:
+* Qwen1.5 7B
 * Open LLaMA 7B and 13B
 * PolyLM 1.7B and 13B
 
 ## Training and Evaluation
+
+### Qwen1.5 7B Dutch Chat
+
+This repository contains 2 notebooks to perform finetuning and DPO Alignment of the Qwen1.5-7B-Chat model.
+
+Officially the Qwen1.5 model types don't support the Dutch language. However when doing some experiments I noticed that the chat quality for the Dutch language (for the 7B and larger sizes..) was comparable or may'be even better then with the similar Mistral base models. Mistral officially also doesn't support Dutch however it already provided some interresting Dutch Chat Models as created by Bram van Roy and Edwin Rijgersberg.
+
+This is basically my attempt to further fine-tune and align the Qwen1.5-7B-Chat model and optimize it to be used as a Dutch Chat model.
+
+The datasets for finetuneing and DPO alignment where created by Bram van Roy. Kudos to Bram for these datasets!
+* [BramVanroy/ultrachat_200k_dutch](https://huggingface.co/datasets/BramVanroy/ultrachat_200k_dutch)
+* [BramVanroy/ultra_feedback_dutch_cleaned](https://huggingface.co/datasets/BramVanroy/ultra_feedback_dutch_cleaned)
+
+Basemodel [Qwen/Qwen1.5-7B-Chat](https://huggingface.co/Qwen/Qwen1.5-7B-Chat):
+* SFT Training Notebook [Qwen1_5_7B_Dutch_Chat_SFT](Qwen1_5_7B_Dutch_Chat_SFT.ipynb)
+* DPO Alignment Training Notebook [Qwen1_5_7B_Dutch_Chat_DPO](Qwen1_5_7B_Dutch_Chat_DPO.ipynb)
+
+In total there are the following 4 models:
+* SFT Adapter Model [Qwen1.5-7B-Dutch-Chat-Sft](https://huggingface.co/robinsmits/Qwen1.5-7B-Dutch-Chat-Sft)
+* SFT Adapter-Merged Model [Qwen1.5-7B-Dutch-Chat-Sft-Bf16](https://huggingface.co/robinsmits/Qwen1.5-7B-Dutch-Chat-Sft-Bf16)
+* DPO Alignment Adapter Model [Qwen1.5-7B-Dutch-Chat-Dpo](https://huggingface.co/robinsmits/Qwen1.5-7B-Dutch-Chat-Dpo)
+* DPO Alignment Adapter-Merged Model [Qwen1.5-7B-Dutch-Chat](https://huggingface.co/robinsmits/Qwen1.5-7B-Dutch-Chat)
+
+It is recommended to use the [Qwen1.5-7B-Dutch-Chat](https://huggingface.co/robinsmits/Qwen1.5-7B-Dutch-Chat) model for experiments as it is finetuned and aligned.
 
 ### OpenLLaMA
 
@@ -97,6 +122,15 @@ Since I would like to be able to compare the various training runs and evaluatio
   title = {{A}lpaca {C}leaned {D}utch},
   publisher = {Hugging Face},
   year = {2023}
+}
+```
+
+```
+@article{qwen,
+  title={Qwen Technical Report},
+  author={Jinze Bai and Shuai Bai and Yunfei Chu and Zeyu Cui and Kai Dang and Xiaodong Deng and Yang Fan and Wenbin Ge and Yu Han and Fei Huang and Binyuan Hui and Luo Ji and Mei Li and Junyang Lin and Runji Lin and Dayiheng Liu and Gao Liu and Chengqiang Lu and Keming Lu and Jianxin Ma and Rui Men and Xingzhang Ren and Xuancheng Ren and Chuanqi Tan and Sinan Tan and Jianhong Tu and Peng Wang and Shijie Wang and Wei Wang and Shengguang Wu and Benfeng Xu and Jin Xu and An Yang and Hao Yang and Jian Yang and Shusheng Yang and Yang Yao and Bowen Yu and Hongyi Yuan and Zheng Yuan and Jianwei Zhang and Xingxuan Zhang and Yichang Zhang and Zhenru Zhang and Chang Zhou and Jingren Zhou and Xiaohuan Zhou and Tianhang Zhu},
+  journal={arXiv preprint arXiv:2309.16609},
+  year={2023}
 }
 ```
 
