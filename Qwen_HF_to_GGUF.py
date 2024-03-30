@@ -2,7 +2,7 @@ from huggingface_hub import login, snapshot_download
 import os
 
 # HF Login
-login("hf_XXXXXXXXXXXXXXXXXXXXXXXXXXXXX") # Fill in your own token
+# login("hf_XXXXXXXXXXXXXXXXXXXXXXXXXXXXX") # Fill in your own token
 
 # Set Model Name
 model_name = "robinsmits/Qwen1.5-7B-Dutch-Chat"

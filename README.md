@@ -32,6 +32,14 @@ In total there are the following 4 models:
 
 It is recommended to use the [Qwen1.5-7B-Dutch-Chat](https://huggingface.co/robinsmits/Qwen1.5-7B-Dutch-Chat) model for experiments as it is finetuned and aligned.
 
+### Qwen1.5 HF Model to GGUF Conversion
+
+The HuggingFace model was converted to multiple quantized GGUF files that can be used with llama.cpp or UI tools like LM Studio.
+
+Setup the [llama.cpp](https://github.com/ggerganov/llama.cpp) environment according to the official instruction.
+
+Use python script [Qwen_HF_to_GGUF](Qwen_HF_to_GGUF.py) to convert and test the HF model. 
+
 ### OpenLLaMA
 
 I've used Google Colaboratory to finetune the 2 largest LLM base models from openlm_research on the Alpaca Cleaned instruction dataset that was translated to Dutch.

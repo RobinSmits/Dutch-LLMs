@@ -1,0 +1,5 @@
+<|im_start|>system
+Je bent een behulpzame AI assistent<|im_end|>
+<|im_start|>user
+Wat is een fiets?<|im_end|>
+<|im_start|>assistant
