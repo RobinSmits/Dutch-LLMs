@@ -32,6 +32,19 @@ In total there are the following 4 models:
 
 It is recommended to use the [Qwen1.5-7B-Dutch-Chat](https://huggingface.co/robinsmits/Qwen1.5-7B-Dutch-Chat) model for experiments as it is finetuned and aligned.
 
+### Qwen1.5 7B Dutch Chat Evaluation
+
+For evaluation results based on the Dutch language you can take a look at the site of ScandEval.
+
+This model achieves a score which is very close to the performance of GPT-3.5.
+
+[Dutch Natural Language Understanding](https://scandeval.com/dutch-nlu/)
+
+[Dutch Natural Language Generation](https://scandeval.com/dutch-nlg/)
+
+![ScandEval Dutch NLG Leaderboard Score](images/dutch_nlg.png)
+
+
 ### Qwen1.5 HF Model to GGUF Conversion
 
 The HuggingFace model was converted to multiple quantized GGUF files that can be used with llama.cpp or UI tools like LM Studio.
